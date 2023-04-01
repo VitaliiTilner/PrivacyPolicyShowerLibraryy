@@ -65,3 +65,17 @@ dependencies {
 
     implementation ("com.karumi:dexter:6.2.3")
 }
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+
+                groupId = 'com.github.vitaliitilner'
+                artifactId = 'PrivacyPolicyShowerLibrary'
+                version = '1.0'
+            }
+        }
+    }
+}
