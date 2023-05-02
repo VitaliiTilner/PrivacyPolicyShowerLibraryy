@@ -33,7 +33,7 @@ class Fither(
 
         setupNotificationHandler(activity, title)
 
-        delay(1500)
+        delay(1100)
 
         GameClassData.gameClass = gameActivityClass
 
@@ -49,6 +49,7 @@ class Fither(
             if (tracker == "" || tracker == "null") {
                 val gameIntent = Intent(activity, gameActivityClass)
                 activity.startActivity(gameIntent)
+                activity.finish()
             } else {
                 @Suppress("DeferredResultUnused")
                 withContext(Dispatchers.IO) {
