@@ -17,20 +17,8 @@ internal class InitReferrer {
                             val installReferrer = referrerClient.installReferrer.installReferrer
                             cullBack(installReferrer)
                         }
-                        InstallReferrerClient.InstallReferrerResponse.FEATURE_NOT_SUPPORTED -> {
-                            cullBack(null)
-                        }
-                        InstallReferrerClient.InstallReferrerResponse.SERVICE_UNAVAILABLE -> {
-                            cullBack(null)
-                        }
-                        InstallReferrerClient.InstallReferrerResponse.DEVELOPER_ERROR ->{
-                            cullBack(null)
-                        }
-                        InstallReferrerClient.InstallReferrerResponse.PERMISSION_ERROR->{
-                            cullBack(null)
-                        }
-                        InstallReferrerClient.InstallReferrerResponse.SERVICE_DISCONNECTED->{
-                            cullBack(null)
+                        else -> {
+                             cullBack(null)
                         }
                     }
                     referrerClient.endConnection()
